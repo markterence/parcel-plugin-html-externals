@@ -24,7 +24,7 @@ class HTMLExternalsAsset extends HTMLAsset {
 function _walk(walk, externals) {
   return htmlWalkFn => walk.call(this, node => {
     const src = node.attrs && (
-      (node.tag === 'script' && node.attrs.src) ||
+      ((node.tag === 'script' || node.tag === 'img' )&& node.attrs.src) ||
       (node.tag === 'link' && node.attrs.href)
     );
 
